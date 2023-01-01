@@ -1,0 +1,28 @@
+// Imports the utility that allows Java to accept user input
+import java.util.Scanner; 
+
+public class OutputWithVars {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+ // Initializes variables as an integer     
+      int userNum = 0;
+      int newNum = 0;
+      
+//Prints a String and accepts user input
+      System.out.println("Enter integer: ");
+      userNum = scnr.nextInt();
+      
+//Prints desired output and new lines
+      System.out.println("You entered: " + userNum);
+      System.out.println(userNum + " squared is " + (userNum*userNum));
+      System.out.println("And " + userNum + " cubed is " + (userNum * userNum * userNum)+ "!!");
+      System.out.println("Enter another integer: ");
+      
+//Takes a second user input and prints desired output
+      newNum = scnr.nextInt();
+      System.out.println(userNum + " + " + newNum + " is " + (userNum + newNum));
+      System.out.println(userNum + " * " + newNum + " is " + (userNum * newNum));
+      return;
+   }
+}

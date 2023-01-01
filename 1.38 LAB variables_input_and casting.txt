@@ -1,0 +1,39 @@
+//Imports utility that allows Java to accept user inputs
+import java.util.Scanner;
+
+public class BasicInput {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      
+// Initializes the variables for integer, double(float), charater, and a string.    
+      int userInt = 0;
+      double userDouble = 0.0;
+      char userChar;
+      String userString;
+
+// Accepts user input and prints desired output     
+      System.out.println("Enter integer: ");
+      userInt = scnr.nextInt();
+      
+      System.out.println("Enter double: ");
+      userDouble = scnr.nextDouble();
+      
+      System.out.println("Enter character: ");
+      userChar = scnr.next().charAt(0);
+      
+      System.out.println("Enter string: ");
+      userString = scnr.next();
+      
+      // FIXME (1): Finish reading other items into variables, then output the four values on a single line separated by a space
+      System.out.println(userInt + " " + userDouble + " " + userChar + " " + userString);
+      
+      // FIXME (2): Output the four values in reverse
+      System.out.println(userString + " " + userChar + " " + userDouble + " " + userInt);
+      
+      // FIXME (3): Cast the double to an integer, and output that integer
+//Recast the variable userDouble (double) to a new variable userCast(integer) using a method called typecasting 
+      int userCast = (int) userDouble;
+      System.out.println(userDouble + " cast to an integer is " + userCast);
+      return;
+   }
+}

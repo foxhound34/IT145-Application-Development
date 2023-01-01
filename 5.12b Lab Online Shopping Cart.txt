@@ -1,0 +1,77 @@
+//Import Java utility Scanner to obtain user input
+import java.util.Scanner;
+
+public class ShoppingCartPrinter {
+   public static void main(String[] args) {
+      //Allows for user input via keayboard
+      Scanner scnr = new Scanner(System.in);
+      
+      //Initializes the variables 
+      int i = 0;
+      String productName;
+      int productPrice = 0;
+      int productQuantity = 0;
+      int cartTotal = 0;
+      int item1Price = 0;
+      int item2Price = 0;
+      
+      //Creats new objects for item 1 and item 2
+      ItemToPurchase item1 = new ItemToPurchase();
+      ItemToPurchase item2 = new ItemToPurchase();
+
+      // Get item 1 details from user, create itemToPurchase object
+      System.out.println("Item 1");
+      
+      System.out.println("Enter the item name: ");
+      productName = scnr.nextLine();
+      
+      System.out.println("Enter the item price: ");
+      productPrice = scnr.nextInt();
+      
+      System.out.println("Enter the item quantity: ");
+      productQuantity = scnr.nextInt();
+   
+      //Set item 1 details 
+      item1.setName(productName);
+      item1.setPrice(productPrice);
+      item1.setQuantity(productQuantity);
+      //Print empty line
+      System.out.println();
+      
+      // Get item 2 details from user, create itemToPurchase object
+      System.out.println("Item 2");
+      scnr.nextLine();
+      System.out.println("Enter the item name: ");
+      productName = scnr.nextLine();
+      
+      System.out.println("Enter the item price: ");
+      productPrice = scnr.nextInt();
+      
+      System.out.println("Enter the item quantity: ");
+      productQuantity = scnr.nextInt();
+      
+      System.out.println();
+      //Set item 2 details
+      item2.setName(productName);
+      item2.setPrice(productPrice);
+      item2.setQuantity(productQuantity);
+      
+      // Add costs of two items and print total
+      // cartTotal = item one price + item two price
+      
+      item1Price = (item1.getQuantity() * item1.getPrice());
+      item2Price = (item2.getQuantity() * item2.getPrice());
+      cartTotal = (item1Price + item2Price);
+      
+      // Total Cost
+      System.out.println("TOTAL COST");
+      // item one information
+      System.out.println(item1.getName() + " " + item1.getQuantity() +" " + "@ $" + item1.getPrice() + " = $" + item1Price);
+      // item two information
+      System.out.println(item2.getName() + " " + item2.getQuantity() +" " + "@ $" + item2.getPrice() + " = $" + item2Price);
+      // Total output
+      System.out.println();
+      System.out.println("Total: $" + cartTotal);
+      return;
+   }
+}

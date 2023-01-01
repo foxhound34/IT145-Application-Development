@@ -1,0 +1,26 @@
+//Imports utility that allows for user input
+import java.util.Scanner;
+
+//sets a new class called LabProgram, builds a method for the arithmatic, and returns the value to a variable
+public class LabProgram {
+   public static double drivingCost(double milesPerGallon, double dollarsPerGallon, double milesDriven){
+   double yourValue = (milesDriven/milesPerGallon) * dollarsPerGallon;
+   return yourValue;
+}   
+   public static void main(String[] args) {
+// sets up new input from System and two variables that have not been initialized
+      Scanner scnr = new Scanner(System.in);
+      double milesPerGallon;
+      double dollarPerGallon;
+
+      //Initializes the variables with user input
+      milesPerGallon = scnr.nextDouble();
+      dollarPerGallon = scnr.nextDouble();
+
+      //Calls the method from the print statement, runs the input varibles and the hard coded variable
+      //through the method above and returns the value of the variable yourValue from that method
+      System.out.printf("%.2f ", drivingCost(milesPerGallon, dollarPerGallon, 10));
+      System.out.printf("%.2f ", drivingCost(milesPerGallon, dollarPerGallon, 50));
+      System.out.printf("%.2f\n", drivingCost(milesPerGallon, dollarPerGallon, 400));
+   }
+}

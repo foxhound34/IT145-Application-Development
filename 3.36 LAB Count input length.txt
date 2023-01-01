@@ -1,0 +1,22 @@
+//Imports utility to accept user inputs
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      String userText;
+      int count = 0;
+      userText = scnr.nextLine();  // Gets entire line, including spaces. 
+
+     // i iterates over the string and checks that the charater is a letter then icreases the count by 1 each time
+     for (int i = 0 ; i < userText.length(); ++i) {
+         if (Character.isLetter(userText.charAt(i))){
+            ++count;
+         } // second if statement to specifically catch the "?" not sure why zybooks counts as a letter by the IDE doesn't
+         if (userText.charAt(i) == '?') {
+            ++count;
+         } // <-- This brace was the bane of my existance
+      }
+   System.out.println(count);
+   }
+}

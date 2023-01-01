@@ -1,0 +1,53 @@
+//import utility to accept user input
+import java.util.Scanner; 
+
+public class DrawHalfArrow {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      // initializes variables
+      int arrowBaseHeight;
+      int arrowBaseWidth;
+      int arrowHeadWidth;
+      int row;
+      int col;
+      int s;
+      int r;
+      
+      // Obtains user input
+      System.out.println("Enter arrow base height:");
+      arrowBaseHeight = scnr.nextInt();
+      
+      System.out.println("Enter arrow base width:");
+      arrowBaseWidth = scnr.nextInt();
+      
+      System.out.println("Enter arrow head width:");
+      arrowHeadWidth = scnr.nextInt();
+      // While loop preventing arrow base width being larger than the arrow head width 
+      while (arrowHeadWidth <= arrowBaseWidth) { 
+         System.out.println("Enter arrow head width:");
+         arrowHeadWidth = scnr.nextInt();
+      }
+      // Draw arrow base (height = 5, width = 2)
+      //Prints space between the inputs and the arrow head
+      System.out.println();
+      for (row = 0; row < arrowBaseHeight; ++row) { //base height is 5 so outer loop iterates 5 times
+         for (col = 0; col < arrowBaseWidth; ++col) { //base width is 2 so inner loop iterates 2 times
+            System.out.print("*");
+         }
+         System.out.println();
+      } 
+      // Draw arrow head (width = 4)
+      // Row number needs to increases as column number decreases 
+      // arrowHeadWidth input is equal to the column count
+      // Column width needs to be greater than zero
+      // I am able to use the same variables because a declared name is only valid within its scope
+      for (row = arrowHeadWidth; row > 0; --row){
+         
+      // Row count needs to increase as column count decreases
+         for (col = 0 ; col < row; ++col) { // while column length is less than row count
+            System.out.print("*");
+         }
+         System.out.println();
+      }   
+   }
+}

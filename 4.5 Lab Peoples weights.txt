@@ -1,0 +1,55 @@
+/// I performed this lab in order of Zybooks, but once I learned enhanced loops
+/// I came back and streamlined the code. Refer to subbitted lab 7:28 PM on 9/19/22
+/// to see my original code.
+
+// Import Java utility to accept user input
+import java.util.Scanner;
+
+// Sets class called PeopleWeights
+public class PeopleWeights {
+   public static void main(String[] args) {
+      
+      // Sets up a new scanner for user input
+      Scanner scnr = new Scanner(System.in);
+      
+      final int NUM_ELEMENTS = 5; // Will limit the number of elements in an array to 5
+      double [] arrayWeight = new double [NUM_ELEMENTS];// initializes an array with the element limit
+      // initialiazes variables
+      int i;
+      double totalWeight= 0;
+      double maxWeight = 0;
+      
+      // Takes user input prints on new line
+      System.out.println("Enter weight 1: ");
+      arrayWeight[0] = scnr.nextDouble();
+      System.out.println("Enter weight 2: ");
+      arrayWeight[1] = scnr.nextDouble();
+      System.out.println("Enter weight 3: ");
+      arrayWeight[2] = scnr.nextDouble();
+      System.out.println("Enter weight 4: ");
+      arrayWeight[3] = scnr.nextDouble();
+      System.out.println("Enter weight 5: ");
+      arrayWeight[4] = scnr.nextDouble();
+      System.out.println();
+      System.out.print("You entered: ");
+       
+      for (Double userWeight : arrayWeight) {// Enhanced loop that iterates through array. As shown in Figure 4.7.1
+         System.out.print(userWeight + " ");//prints array on a single line with a space inbetween
+      }
+      System.out.println(); //Prints an empty new line
+      
+      // Sum of array weights
+      for (Double userWeight : arrayWeight) {//i interates through array and adds integer to totalWeight 
+         totalWeight += userWeight; // As shown in zyDE 4.4.1 
+      } 
+      System.out.println("Total weight: " + totalWeight); //Prints Sum from above
+      System.out.println("Average weight: " + (totalWeight/NUM_ELEMENTS));// divides sum by element limit
+      
+      for (Double userWeight : arrayWeight) {
+            if (userWeight > maxWeight) {// If i of array is greater than the maxWeight (initialized to 0)
+                maxWeight = userWeight; // then i is set to new maxWeight as shown in Figure 4.4.3 
+            }
+      }
+      System.out.println("Max weight: " + maxWeight);// prints max weight
+   }
+}
